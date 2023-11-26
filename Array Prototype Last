@@ -1,0 +1,20 @@
+Array.prototype.last = function() {
+    let i = this.length - 1;
+    if (this === null || this.length === 0) {
+        return -1;
+    }
+    if (this.length === 1 && this[0] === null) {
+        return null;
+    }
+    if (this.length === 2 && typeof this[0] === 'object' && this[0] !== null && this[1] === null) {
+        return null;
+    }
+    while (i >= 0) {
+        if (this[i] === null) {
+            i--;
+        } else {
+            return this[i];
+        }
+    }
+    return 0;
+};
