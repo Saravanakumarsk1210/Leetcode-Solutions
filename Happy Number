@@ -1,0 +1,25 @@
+class Solution {
+public:
+    bool isHappy(int n) 
+    {
+        int rem ;
+        int result;
+
+        while(n>9)
+        {
+             result=0;
+ while (n>0)
+            {     
+       rem=n%10;    
+        result+= rem*rem;           
+        n=n/10;       
+            }
+ n=result;
+        }
+if(result==1||n==1||n==7)
+return true;
+else 
+return false;
+
+    }
+};
