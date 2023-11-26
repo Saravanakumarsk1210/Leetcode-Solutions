@@ -1,0 +1,59 @@
+class Solution {
+public:
+    vector<int> rearrangeArray(vector<int>& nums) 
+    {
+        int i;
+        int n= nums.size();
+        vector<int> v1(n);
+        vector<int> v2(n);
+int x=0;
+int y=0;
+
+        
+        for(i=0;i<n;i++)
+    {     
+        if (nums[i]<0)
+        {
+
+            v1[x]=nums[i];
+            x++;
+        }      
+  else 
+        {            
+            v2[y]=nums[i];
+            y++;
+
+        }
+
+   }
+
+
+vector<int> result(n) ;
+
+
+x=0;
+y=0;
+
+   for (i=0;i<n;i++)
+   {
+    
+    if(i%2==0)
+    {
+        result[i]=v2[y];
+    y++;
+
+    
+
+    }
+else
+{
+    result[i]=v1[x];
+    x++;
+ 
+}
+
+   }
+
+return result;
+    }
+};
